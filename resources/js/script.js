@@ -2,36 +2,36 @@
 
 $(document).ready(function () {
 
-    $('.js--section-features').waypoint(function (direction) {
+  $('.js--section-features').waypoint(function (direction) {
 
-        if (direction == "down") {
+    if (direction == "down") {
 
-            $('nav').addClass('sticky');
+      $('nav').addClass('sticky');
 
-        } else {
+    } else {
 
-            $('nav').removeClass('sticky');
+      $('nav').removeClass('sticky');
 
-        }
+    }
 
 
-    },{
-    offset: '60px' 
- 
-    });
+  }, {
+    offset: '60px'
+
+  });
 });
 
 /* scroll on buttons */
 
-$('.js--scroll-to-plans') .click(function(){
+$('.js--scroll-to-plans').click(function () {
 
-$('html , body') .animate({scrollTop: $('.js--section-plans') .offset() .top } ,1000 );
+  $('html , body').animate({ scrollTop: $('.js--section-plans').offset().top }, 1000);
 
 })
 
-$('.js--scroll-to-start') .click(function(){
+$('.js--scroll-to-start').click(function () {
 
-$('html , body') .animate({scrollTop: $('.js--section-features') .offset() .top } ,1000 )
+  $('html , body').animate({ scrollTop: $('.js--section-features').offset().top }, 1000)
 
 });
 
@@ -41,11 +41,11 @@ $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
   .not('[href="#0"]')
-  .click(function(event) {
+  .click(function (event) {
     // On-page links
     if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+      &&
       location.hostname == this.hostname
     ) {
       // Figure out element to scroll to
@@ -57,7 +57,7 @@ $('a[href*="#"]')
         event.preventDefault();
         $('html, body').animate({
           scrollTop: target.offset().top
-        }, 1000, function() {
+        }, 1000, function () {
           // Callback after animation
           // Must change focus!
           var $target = $(target);
@@ -65,12 +65,59 @@ $('a[href*="#"]')
           if ($target.is(":focus")) { // Checking if the target was focused
             return false;
           } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
             $target.focus(); // Set focus again
           };
         });
       }
     }
+
   });
+
+    /* Animation on scroll */
+
+    $('.js--wp-1').waypoint(function (direction) {
+
+      $('.js--wp-1').addClass('animated fadeIn');
+
+      
+
+    }, {
+      offset: '50%'
+    });
+
+    
+    $('.js--wp-2').waypoint(function (direction) {
+
+      $('.js--wp-2').addClass('animated fadeInUp');
+
+      
+
+    }, {
+      offset: '50%'
+    });
+
+    $('.js--wp-3').waypoint(function (direction) {
+
+      $('.js--wp-3').addClass('animated fadeIn');
+
+      
+
+    }, {
+      offset: '50%'
+    });
+
+    $('.js--wp-4').waypoint(function (direction) {
+
+      $('.js--wp-4').addClass('animated pulse');
+
+      
+
+    }, {
+      offset: '50%'
+    });
+
+
+  
 
 
